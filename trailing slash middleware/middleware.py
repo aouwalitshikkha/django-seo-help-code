@@ -1,3 +1,7 @@
+from django.utils.deprecation import MiddlewareMixin
+from django.http import HttpResponsePermanentRedirect
+import re
+
 class TrailingSlashMiddleware(MiddlewareMixin):
     def process_request(self, request):
         path = request.path_info
